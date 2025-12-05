@@ -1,0 +1,92 @@
+[
+  {
+    "question_fr": "Comment obtenir un extrait de naissance ?",
+    "question_ar": "كيف يمكنني الحصول على شهادة ميلاد؟",
+    "answer_fr": "Vous pouvez obtenir un extrait de naissance au bureau de l'état civil ou via le portail numérique si disponible.",
+    "answer_ar": "يمكنك الحصول على شهادة الميلاد من مكتب الحالة المدنية أو عبر البوابة الرقمية إذا كانت متاحة."
+  },
+  {
+    "question_fr": "Comment renouveler ma carte d'identité nationale ?",
+    "question_ar": "كيف أجدد بطاقة هويتي الوطنية؟",
+    "answer_fr": "Rendez-vous au bureau de l'état civil avec vos documents ou utilisez le portail en ligne pour le renouvellement.",
+    "answer_ar": "توجه إلى مكتب الحالة المدنية مع مستنداتك أو استخدم البوابة الإلكترونية لتجديد البطاقة."
+  },
+  {
+    "question_fr": "Comment obtenir un passeport ?",
+    "question_ar": "كيف أحصل على جواز السفر؟",
+    "answer_fr": "Vous devez déposer une demande au bureau des passeports ou via le portail numérique, avec vos pièces d'identité et photos récentes.",
+    "answer_ar": "يجب تقديم طلب في مكتب الجوازات أو عبر البوابة الرقمية، مع هويتك وصور حديثة."
+  },
+  {
+    "question_fr": "Comment m'inscrire à la sécurité sociale ?",
+    "question_ar": "كيف يمكنني التسجيل في الضمان الاجتماعي؟",
+    "answer_fr": "Remplissez le formulaire d'inscription au bureau local de la sécurité sociale ou en ligne, et fournissez une pièce d'identité.",
+    "answer_ar": "املأ استمارة التسجيل في مكتب الضمان الاجتماعي المحلي أو عبر الإنترنت، وقدم بطاقة هوية."
+  },
+  {
+    "question_fr": "Comment accéder aux services de santé publique ?",
+    "question_ar": "كيف يمكنني الوصول إلى خدمات الصحة العامة؟",
+    "answer_fr": "Vous pouvez prendre rendez-vous dans les centres de santé ou utiliser l'application nationale pour les services médicaux en ligne.",
+    "answer_ar": "يمكنك حجز موعد في المراكز الصحية أو استخدام التطبيق الوطني للخدمات الطبية عبر الإنترنت."
+  },
+  {
+    "question_fr": "Comment inscrire mon enfant à l'école ?",
+    "question_ar": "كيف أسجل طفلي في المدرسة؟",
+    "answer_fr": "Rendez-vous à l'école locale avec les documents de l'enfant ou utilisez le portail numérique de l'éducation pour l'inscription.",
+    "answer_ar": "توجه إلى المدرسة المحلية مع مستندات الطفل أو استخدم البوابة الرقمية للتعليم للتسجيل."
+  },
+  {
+    "question_fr": "Comment payer mes impôts ?",
+    "question_ar": "كيف أدفع ضرائبي؟",
+    "answer_fr": "Vous pouvez payer vos impôts au centre fiscal ou via le portail en ligne du Trésor public.",
+    "answer_ar": "يمكنك دفع الضرائب في المركز المالي أو عبر البوابة الإلكترونية للخزانة العامة."
+  },
+  {
+    "question_fr": "Comment obtenir un certificat de mariage ?",
+    "question_ar": "كيف أحصل على شهادة زواج؟",
+    "answer_fr": "Demandez le certificat au bureau de l'état civil de votre lieu de mariage ou via le portail numérique.",
+    "answer_ar": "اطلب شهادة الزواج من مكتب الحالة المدنية في مكان الزواج أو عبر البوابة الرقمية."
+  },
+  {
+    "question_fr": "Comment signaler un problème avec un service public ?",
+    "question_ar": "كيف أبلغ عن مشكلة في خدمة عامة؟",
+    "answer_fr": "Vous pouvez utiliser l'application ou contacter le service client du ministère concerné pour signaler le problème.",
+    "answer_ar": "يمكنك استخدام التطبيق أو الاتصال بخدمة العملاء في الوزارة المعنية للإبلاغ عن المشكلة."
+  },
+  {
+    "question_fr": "Comment accéder aux services juridiques ?",
+    "question_ar": "كيف يمكنني الوصول إلى الخدمات القانونية؟",
+    "answer_fr": "L'assistant IA peut vous orienter vers les services juridiques publics ou les consultations en ligne disponibles.",
+    "answer_ar": "يمكن للمساعد الذكي توجيهك إلى الخدمات القانونية العامة أو الاستشارات عبر الإنترنت المتاحة."
+  },
+  {
+    "question_fr": "Comment obtenir une aide sociale ?",
+    "question_ar": "كيف أحصل على المساعدة الاجتماعية؟",
+    "answer_fr": "Rendez-vous dans les centres sociaux ou utilisez le portail numérique pour connaître les aides disponibles.",
+    "answer_ar": "توجه إلى المراكز الاجتماعية أو استخدم البوابة الرقمية لمعرفة المساعدات المتاحة."
+  },
+  {
+    "question_fr": "Comment signaler un changement d'adresse ?",
+    "question_ar": "كيف أبلغ عن تغيير عنواني؟",
+    "answer_fr": "Vous devez déclarer votre nouvelle adresse au bureau de l'état civil ou via le portail en ligne.",
+    "answer_ar": "يجب الإبلاغ عن عنوانك الجديد في مكتب الحالة المدنية أو عبر البوابة الإلكترونية."
+  },
+  {
+    "question_fr": "Comment obtenir un permis de conduire ?",
+    "question_ar": "كيف أحصل على رخصة قيادة؟",
+    "answer_fr": "Inscrivez-vous au centre de formation routière, passez les examens théoriques et pratiques, ou utilisez le portail si le service est digitalisé.",
+    "answer_ar": "سجل في مركز تدريب القيادة، واجتاز الامتحانات النظرية والعملية، أو استخدم البوابة إذا كانت الخدمة رقمية."
+  },
+  {
+    "question_fr": "Puis-je utiliser l'assistant sans connexion Internet ?",
+    "question_ar": "هل يمكنني استخدام المساعد بدون اتصال بالإنترنت؟",
+    "answer_fr": "Oui, l'assistant fonctionne partiellement offline grâce à une base locale de questions-réponses.",
+    "answer_ar": "نعم، يعمل المساعد جزئياً دون اتصال بالإنترنت باستخدام قاعدة أسئلة وأجوبة محلية."
+  },
+  {
+    "question_fr": "Comment accéder à l'assistant en arabe ?",
+    "question_ar": "كيف يمكنني الوصول إلى المساعد باللغة العربية؟",
+    "answer_fr": "Vous pouvez sélectionner la langue arabe dans l'application et toutes les réponses s'afficheront en arabe.",
+    "answer_ar": "يمكنك اختيار اللغة العربية في التطبيق وستظهر جميع الإجابات بالعربية."
+  }
+]

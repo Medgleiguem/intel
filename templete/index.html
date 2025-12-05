@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Assistant IA Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .chat-container {
+      width: 500px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      height: 600px;
+    }
+
+    .chat-header {
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+    }
+
+    .message {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 80%;
+      clear: both;
+    }
+
+    .user-message {
+      background-color: #DCF8C6;
+      align-self: flex-end;
+      float: right;
+    }
+
+    .ai-message {
+      background-color: #eee;
+      align-self: flex-start;
+      float: left;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-input textarea {
+      flex: 1;
+      resize: none;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .chat-input select {
+      margin-left: 10px;
+      padding: 5px;
+    }
+
+    .chat-input button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-input button:disabled {
+      background-color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Assistant IA</div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-input">
+      <textarea id="question" rows="2" placeholder="Posez votre question..."></textarea>
+      <select id="lang">
+        <option value="fr">Français</option>
+        <option value="ar">العربية</option>
+      </select>
+      <button id="askBtn">Envoyer</button>
+    </div>
+  </div>
+
+  <script>
+    const chatMessages = document.getElementById("chatMessages");
+    const questionInput = document.getElementById("question");
+    const langSelect = document.getElementById("lang");
+    const askBtn = document.getElementById("askBtn");
+
+    // Add message to chat
+    function addMessage(text, sender) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add("message");
+      messageDiv.classList.add(sender === "user" ? "user-message" : "ai-message");
+      messageDiv.textContent = text;
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    askBtn.addEventListener("click", async () => {
+      const question = questionInput.value.trim();
+      const lang = langSelect.value;
+      if (!question) return;
+
+      addMessage(question, "user");
+      questionInput.value = "";
+      askBtn.disabled = true;
+
+      addMessage("Patientez...", "ai");
+
+      try {
+        const response = await fetch("http://127.0.0.1:5000/ask", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question, lang })
+        });
+
+        const data = await response.json();
+
+        // Remove temporary "Patientez..." message
+        chatMessages.lastChild.remove();
+
+        addMessage(data.answer, "ai");
+      } catch (error) {
+        chatMessages.lastChild.remove();
+        addMessage("Erreur lors de la communication avec le serveur.", "ai");
+        console.error(error);
+      }
+
+      askBtn.disabled = false;
+    });
+
+    // Optional: press Enter to send
+    questionInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        askBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
