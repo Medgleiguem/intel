@@ -1,9 +1,12 @@
 flask==3.1.2
-requests==2.32.5
-jsonify==0.5
 flask-cors==3.0.10
-sentence-transformers==2.2.2
-numpy==1.26.4
+requests==2.32.3
+jsonify==0.5
 
-# GPT4All: install via pip from GitHub or a wheel if needed
-# ai_answer: not on PyPI, remove or replace with the actual package you meant
+# Sentence Transformers (CPU-optimized)
+sentence-transformers==2.2.2
+
+# CPU-only PyTorch (NO CUDA downloads!)
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
