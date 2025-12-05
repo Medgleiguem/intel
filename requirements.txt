@@ -1,0 +1,10 @@
+flask
+request
+jsonify
+CORS
+ai_answer
+SequenceMatcher
+GPT4All
+json
+SentenceTransformer
+numpy
