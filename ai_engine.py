@@ -1,12 +1,10 @@
 # ai_engine.py
 import json
 from difflib import SequenceMatcher
-from gpt4all import GPT4All
 
 # -----------------------------
 # CONFIG
 # -----------------------------
-MODEL_PATH = "models/ggml-alpaca-7b-q4.bin"  # <-- Updated model
 QA_FILE = "data/qa_base.json"
 
 # -----------------------------
@@ -21,26 +19,22 @@ except Exception as e:
     QA_BASE = []
 
 # -----------------------------
-# INIT GPT4All MODEL
-# -----------------------------
-try:
-    GPT_MODEL = GPT4All(MODEL_PATH)
-    print(f"✅ GPT4All Alpaca 7B model loaded successfully from {MODEL_PATH}")
-except Exception as e:
-    print(f"❌ Failed to load GPT4All Alpaca 7B model: {e}")
-    GPT_MODEL = None
-
-# -----------------------------
 # HELPER FUNCTION TO FIND BEST MATCH
 # -----------------------------
-def get_best_qa_match(question):
+def get_best_qa_match(question, lang="fr"):
+    """Find best matching Q&A from the database"""
     best_ratio = 0
     best_answer = None
+    
     for item in QA_BASE:
-        ratio = SequenceMatcher(None, question.lower(), item.get("question", "").lower()).ratio()
+        # Match against the appropriate language question
+        qa_question = item.get("question_fr", "") if lang == "fr" else item.get("question_ar", "")
+        ratio = SequenceMatcher(None, question.lower(), qa_question.lower()).ratio()
+        
         if ratio > best_ratio:
             best_ratio = ratio
             best_answer = item
+    
     return best_answer, best_ratio
 
 # -----------------------------
@@ -49,33 +43,32 @@ def get_best_qa_match(question):
 def ai_answer(question, lang="fr"):
     """
     Returns an answer for the given question.
-    First searches local Q&A, then falls back to GPT4All Alpaca 7B.
+    Searches local Q&A database with improved matching.
     """
-    # 1️⃣ Try local Q&A
-    best_match, ratio = get_best_qa_match(question)
-    if best_match and ratio > 0.5:  # threshold to consider it a match
+    # Try local Q&A with a reasonable threshold
+    best_match, ratio = get_best_qa_match(question, lang)
+    
+    if best_match and ratio > 0.5:  # 50% similarity threshold
+        answer_text = best_match.get("answer_fr") if lang == "fr" else best_match.get("answer_ar")
         return {
-            "answer": best_match.get("answer_fr") if lang=="fr" else best_match.get("answer_ar"),
+            "answer": answer_text,
             "source": "local_QA",
-            "similarity": ratio
+            "similarity": round(ratio, 2),
+            "confidence": "high" if ratio > 0.7 else "medium"
         }
-
-    # 2️⃣ Fallback to GPT4All Alpaca
-    if GPT_MODEL:
-        try:
-            response = GPT_MODEL.generate(question, max_tokens=150)
-            return {
-                "answer": response,
-                "source": "GPT4All_Alpaca",
-                "similarity": ratio
-            }
-        except Exception as e:
-            return {
-                "answer": f"❌ Failed to generate response: {e}",
-                "source": "error"
-            }
-
+    
+    # No good match found
+    fallback_msg = (
+        "Désolé, je n'ai pas trouvé de réponse précise à votre question. "
+        "Veuillez reformuler ou contacter le service concerné."
+    ) if lang == "fr" else (
+        "عذراً، لم أجد إجابة دقيقة على سؤالك. "
+        "يرجى إعادة صياغة السؤال أو الاتصال بالخدمة المعنية."
+    )
+    
     return {
-        "answer": "❌ No answer available",
-        "source": "none"
+        "answer": fallback_msg,
+        "source": "fallback",
+        "similarity": round(ratio, 2) if ratio else 0,
+        "confidence": "low"
     }
