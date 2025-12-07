@@ -1,0 +1,96 @@
+{
+  "app": {
+    "name": "Moussadar",
+    "tagline": "Votre assistant pour les services publics numériques",
+    "description": "Accédez facilement aux services publics, même avec une faible connexion"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "chat": "Assistant",
+    "services": "Services",
+    "documents": "Documents",
+    "procedures": "Procédures",
+    "about": "À propos"
+  },
+  "home": {
+    "welcome": "Bienvenue sur Moussadar",
+    "subtitle": "Comment pouvons-nous vous aider aujourd'hui ?",
+    "quickActions": "Actions rapides",
+    "searchPlaceholder": "Rechercher un service, une procédure...",
+    "popularServices": "Services populaires",
+    "offlineReady": "Prêt pour le mode hors ligne"
+  },
+  "chat": {
+    "title": "Assistant IA",
+    "placeholder": "Posez votre question...",
+    "send": "Envoyer",
+    "thinking": "L'assistant réfléchit...",
+    "offlineMessage": "Mode hors ligne : réponses limitées",
+    "welcome": "Bonjour ! Je suis Moussadar, votre assistant. Comment puis-je vous aider ?"
+  },
+  "services": {
+    "title": "Services Publics",
+    "categories": "Catégories",
+    "allServices": "Tous les services",
+    "documents": "Documents",
+    "education": "Éducation",
+    "health": "Santé",
+    "taxes": "Impôts",
+    "social": "Social",
+    "transport": "Transport"
+  },
+  "documents": {
+    "title": "Documents Administratifs",
+    "request": "Demander un document",
+    "track": "Suivre ma demande",
+    "popular": "Documents les plus demandés",
+    "idCard": "Carte d'identité",
+    "passport": "Passeport",
+    "birthCertificate": "Acte de naissance",
+    "marriageCertificate": "Acte de mariage",
+    "driverLicense": "Permis de conduire"
+  },
+  "procedures": {
+    "title": "Démarches en ligne",
+    "stepByStep": "Pas à pas",
+    "requirements": "Pièces nécessaires",
+    "duration": "Durée",
+    "cost": "Coût",
+    "startProcedure": "Commencer la démarche"
+  },
+  "common": {
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "share": "Partager",
+    "download": "Télécharger",
+    "print": "Imprimer",
+    "bookmark": "Favori",
+    "help": "Aide",
+    "feedback": "Feedback",
+    "offline": "Hors ligne",
+    "online": "En ligne",
+    "installApp": "Installer l'application",
+    "install": "Installer",
+    "later": "Plus tard",
+    "offlineMode": "Mode hors ligne activé",
+    "noResults": "Aucun résultat trouvé",
+    "tryAgain": "Veuillez réessayer",
+    "contactSupport": "Contacter le support"
+  },
+  "errors": {
+    "networkError": "Erreur de connexion",
+    "serverError": "Erreur serveur",
+    "notFound": "Page non trouvée",
+    "offline": "Fonctionnalité non disponible hors ligne",
+    "tryAgain": "Réessayer quand la connexion est rétablie"
+  }
+}

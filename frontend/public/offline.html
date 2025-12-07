@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moussadar - Hors ligne</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .features h3 {
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 5px 0;
+            color: #6c757d;
+        }
+        
+        .features li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .retry-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .retry-btn:hover {
+            background: #0056b3;
+        }
+        
+        .connection-status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .online {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .offline {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📴</div>
+        <h1>Mode hors ligne activé</h1>
+        <p>Moussadar continue de fonctionner sans connexion internet. Certaines fonctionnalités peuvent être limitées.</p>
+        
+        <div class="features">
+            <h3>Fonctionnalités disponibles :</h3>
+            <ul>
+                <li>Consultation des procédures</li>
+                <li>Recherche dans la base de connaissances</li>
+                <li>Sauvegarde des requêtes</li>
+                <li>Navigation hors ligne</li>
+            </ul>
+        </div>
+        
+        <button class="retry-btn" onclick="checkConnection()">
+            Vérifier la connexion
+        </button>
+        
+        <div id="connection-status" class="connection-status offline" style="display: none;">
+            <span id="status-text">Vérification de la connexion...</span>
+        </div>
+    </div>
+
+    <script>
+        function checkConnection() {
+            const statusDiv = document.getElementById('connection-status');
+            const statusText = document.getElementById('status-text');
+            
+            statusDiv.style.display = 'block';
+            statusText.textContent = 'Vérification de la connexion...';
+            statusDiv.className = 'connection-status';
+            
+            // Check if online
+            if (navigator.onLine) {
+                statusText.textContent = 'Connexion rétablie ! Redirection...';
+                statusDiv.className = 'connection-status online';
+                
+                // Redirect to main app after a short delay
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            } else {
+                statusText.textContent = 'Vous êtes toujours hors ligne. Vérifiez votre connexion internet.';
+                statusDiv.className = 'connection-status offline';
+            }
+        }
+        
+        // Listen for connection changes
+        window.addEventListener('online', () => {
+            const statusDiv = document.getElementById('connection-status');
+            const statusText = document.getElementById('status-text');
+            
+            statusDiv.style.display = 'block';
+            statusText.textContent = 'Connexion rétablie ! Redirection...';
+            statusDiv.className = 'connection-status online';
+            
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000);
+        });
+        
+        window.addEventListener('offline', () => {
+            const statusDiv = document.getElementById('connection-status');
+            const statusText = document.getElementById('status-text');
+            
+            statusDiv.style.display = 'block';
+            statusText.textContent = 'Connexion perdue.';
+            statusDiv.className = 'connection-status offline';
+        });
+        
+        // Auto-retry every 30 seconds
+        setInterval(() => {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

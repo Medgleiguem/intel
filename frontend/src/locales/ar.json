@@ -1,0 +1,96 @@
+{
+  "app": {
+    "name": "مساعد",
+    "tagline": "مساعدك للخدمات العامة الرقمية",
+    "description": "الوصول السهل إلى الخدمات العامة، حتى مع اتصال ضعيف"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "chat": "المساعد",
+    "services": "الخدمات",
+    "documents": "المستندات",
+    "procedures": "الإجراءات",
+    "about": "حول"
+  },
+  "home": {
+    "welcome": "أهلاً وسهلاً بك في مساعد",
+    "subtitle": "كيف يمكننا مساعدتك اليوم؟",
+    "quickActions": "إجراءات سريعة",
+    "searchPlaceholder": "البحث عن خدمة، إجراء...",
+    "popularServices": "الخدمات الشعبية",
+    "offlineReady": "جاهز لوضع عدم الاتصال"
+  },
+  "chat": {
+    "title": "المساعد الذكي",
+    "placeholder": "اطرح سؤالك...",
+    "send": "إرسال",
+    "thinking": "المساعد يفكر...",
+    "offlineMessage": "وضع عدم الاتصال: إجابات محدودة",
+    "welcome": "مرحباً! أنا مساعد، كيف يمكنني مساعدتك؟"
+  },
+  "services": {
+    "title": "الخدمات العامة",
+    "categories": "الفئات",
+    "allServices": "جميع الخدمات",
+    "documents": "المستندات",
+    "education": "التعليم",
+    "health": "الصحة",
+    "taxes": "الضرائب",
+    "social": "الاجتماعي",
+    "transport": "النقل"
+  },
+  "documents": {
+    "title": "المستندات الإدارية",
+    "request": "طلب مستند",
+    "track": "تتبع طلبي",
+    "popular": "المستندات الأكثر طلباً",
+    "idCard": "بطاقة الهوية",
+    "passport": "جواز السفر",
+    "birthCertificate": "شهادة الميلاد",
+    "marriageCertificate": "شهادة الزواج",
+    "driverLicense": "رخصة القيادة"
+  },
+  "procedures": {
+    "title": "الإجراءات عبر الإنترنت",
+    "stepByStep": "خطوة بخطوة",
+    "requirements": "المستندات المطلوبة",
+    "duration": "المدة",
+    "cost": "التكلفة",
+    "startProcedure": "ابدأ الإجراء"
+  },
+  "common": {
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "retry": "إعادة المحاولة",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "share": "مشاركة",
+    "download": "تحميل",
+    "print": "طباعة",
+    "bookmark": "المفضلة",
+    "help": "مساعدة",
+    "feedback": "ملاحظات",
+    "offline": "غير متصل",
+    "online": "متصل",
+    "installApp": "تثبيت التطبيق",
+    "install": "تثبيت",
+    "later": "لاحقاً",
+    "offlineMode": "وضع عدم الاتصال مفعّل",
+    "noResults": "لم يتم العثور على نتائج",
+    "tryAgain": "يرجى المحاولة مرة أخرى",
+    "contactSupport": "الاتصال بالدعم"
+  },
+  "errors": {
+    "networkError": "خطأ في الاتصال",
+    "serverError": "خطأ في الخادم",
+    "notFound": "الصفحة غير موجودة",
+    "offline": "الميزة غير متوفرة دون اتصال",
+    "tryAgain": "أعد المحاولة عند استعادة الاتصال"
+  }
+}
